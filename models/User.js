@@ -1,6 +1,12 @@
 const { Schema, model } = require('mongoose');
-// const { validateEmail } = require('../utils/validator.js');
-// Schema.Types.String.set('validate', v => v == null || v > 0);
+
+const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+      );
+  };
 
 const UserSchema = new Schema({
     username: {
@@ -12,7 +18,8 @@ const UserSchema = new Schema({
     email: {
         type: String,
         unique: true,
-        required: true
+        required: true,
+        validate: [ validateEmail, 'invalid email' ]
     },
     thoughts: {
         type: Array
@@ -25,11 +32,6 @@ const UserSchema = new Schema({
 
 // create the User model using the UserSchema
 const User = model('User', UserSchema);
-
-// const user = new User({ name: '', email: '' });
-
-// const err = await user.validate().then(() => null, err => err);
-// err.errors['email']; // ValidatorError
 
 // export the User model
 module.exports = User;
