@@ -37,8 +37,8 @@ You can add an existing User as a friend for User and delete a friend in User.
 An example of HTTP request URL that you can put in the body for adding an existing User as a friend for User and deleting a friend in User is in the Tests Section.    
 You can add a new reaction for Thought.  
 An example of HTTP request URL that you can put in the body for adding a new reaction for Thought is in the Tests Section.  
-You can delete a new reaction in Thought.  
-An example of HTTP request URL that you can put in the body for deleting a new reaction in Thought is in the Tests Section.  
+You can delete a reaction in Thought.  
+An example of HTTP request URL that you can put in the body for deleting a reaction in Thought is in the Tests Section.  
 An example of JSON that you can put in the body for User, Thought and Reaction is in the Tests Section.
 
 ## License
@@ -68,7 +68,7 @@ The following is an example of HTTP request URL for adding a new reaction for Th
 localhost:3001//api/thoughts/<thoughtId>/reactions          
 <localhost:3001/api/thoughts/63550a8c6c81d0ba1db69609/reactions>
 
-The following is an example of HTTP request URL for deleting a new reaction in Thought.         
+The following is an example of HTTP request URL for deleting a reaction in Thought.         
 localhost:3001/api/thoughts/:thoughtId/reactions/:reactionId            
 <localhost:3001/api/thoughts/635516b4c13a105ac8ae8a5f/reactions/63551730c13a105ac8ae8a78>
 
