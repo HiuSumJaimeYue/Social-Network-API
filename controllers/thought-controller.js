@@ -2,12 +2,12 @@ const { Thought, User } = require('../models');
 
 const thoughtController = {
     // add thought to user
-    addThought({ params, body }, res) {
+    addThought({ body }, res) {
         console.log(body);
         Thought.create(body)
             .then(({ _id }) => {
                 return User.findOneAndUpdate(
-                    { _id: params.userId },
+                    { _id: body.userId },
                     { $push: { thoughts: _id } },
                     { new: true }
                 );
@@ -21,7 +21,14 @@ const thoughtController = {
             })
             .catch(err => res.json(err));
     },
+    //Add reaction
     addReaction({ params, body }, res) {
+
+        /*
+         { reactionBody: "Reaction 1",
+           username: "NewUser" }
+        */
+
         Thought.findOneAndUpdate(
           { _id: params.thoughtId },
           { $push: { reactions: body } },
@@ -36,7 +43,6 @@ const thoughtController = {
             })
             .catch(err => res.json(err));
     },
-
     // remove thought
     removeThought({ params }, res) {
         Thought.findOneAndDelete({ _id: params.thoughtId })
