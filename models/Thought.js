@@ -13,8 +13,8 @@ const ReactionSchema = new Schema(
             maxLength: 280
         },
         username: {
-            typr: String,
-            require: true
+            type: String,
+            required: true
         },
         createdAt: {
             type: Date,
@@ -44,8 +44,8 @@ const ThoughtSchema = new Schema(
             get: createdAtVal => dateFormat(createdAtVal)
         },
         username: {
-            typr: String,
-            require: true
+            type: String,
+            required: true
         },
         reactions: [ReactionSchema]
     },
