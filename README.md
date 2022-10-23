@@ -33,10 +33,8 @@ Requests: Read -- GET, Create -- POST, change/update -- PUT, delete -- DELETE
 You can read and create all Users and Thoughts.  
 You can read or change or delete a User and Thought using the Id at the end of the route.  
 An example of HTTP request URL for User and Thought is in the Tests Section, including an example for using the Id at the end of the route.  
-You can add an existing User as a friend for User.  
-An example of HTTP request URL that you can put in the body for adding an existing User as a friend for User is in the Tests Section.  
-You can delete a friend in User.  
-An example of HTTP request URL that you can put in the body for deleting a friend in User is in the Tests Section.  
+You can add an existing User as a friend for User and delete a friend in User.  
+An example of HTTP request URL that you can put in the body for adding an existing User as a friend for User and deleting a friend in User is in the Tests Section.    
 You can add a new reaction for Thought.  
 An example of HTTP request URL that you can put in the body for adding a new reaction for Thought is in the Tests Section.  
 You can delete a new reaction in Thought.  
